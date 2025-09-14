@@ -72,8 +72,7 @@ const Services: React.FC = () => {
               key={i}
               className="group relative bg-white rounded-2xl shadow-md p-6 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl cursor-pointer"
             >
-              {/* ✅ Dynamic Icon */}
-              <div className="flex items-center justify-center w-14 h-14 rounded-full bg-blue-100 mb-4 group-hover:bg-blue-600 transition-colors text-2xl">
+              <div className="flex items-center md:justify-self-start justify-self-center justify-center w-14 h-14 rounded-full bg-blue-100 mb-4 group-hover:bg-blue-600 transition-colors text-2xl">
                 <span className="text-blue-600 group-hover:text-white transition-colors">
                   {getServiceIcon(service.title)}
                 </span>

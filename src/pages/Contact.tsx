@@ -30,7 +30,7 @@ const Contact: React.FC = () => {
         height="h-[350px]"
       />
       <section className="py-12 bg-gray-50 min-h-screen">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl md:mx-auto mx-5">
           <h1 className="text-center text-3xl font-bold mb-1">Contact Us</h1>
           <p className="text-center text-gray-500 mb-8">
             Get in touch with our customer service team
