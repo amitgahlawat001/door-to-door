@@ -7,6 +7,7 @@ import Services from "../pages/Services";
 import Gallery from "../pages/Gallery";
 import Contact from "../pages/Contact";
 import Tracking from "../pages/Tracking";
+import PageNotFound from "../pages/PageNotFound";
 
 const routes: RouteObject[] = [
   {
@@ -19,6 +20,7 @@ const routes: RouteObject[] = [
       { path: "gallery", element: <Gallery /> },
       { path: "contact", element: <Contact /> },
       { path: "trackshipment", element: <Tracking /> },
+      { path: "*", element: <PageNotFound /> },
     ],
   },
 ];
