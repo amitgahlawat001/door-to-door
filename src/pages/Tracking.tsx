@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import HeroSection from "../components/HeroSection";
-import trackingImg from "../assets/images/heroSectionImage/tracking.jpg";
-
+import { useNavigate } from "react-router-dom";
 interface TrackingUpdate {
   status: string;
   hubAddress: string;
@@ -26,10 +24,11 @@ const mockUpdates: TrackingUpdate[] = [
   },
 ];
 
-export default function Tracking({ showHeroSection = true }) {
+const Tracking: React.FC = () => {
   const [trackingId, setTrackingId] = useState("");
   const [showUpdates, setShowUpdates] = useState(false);
   const [updates, setUpdates] = useState<TrackingUpdate[]>([]);
+  const navigate = useNavigate();
 
   const handleTrack = () => {
     if (trackingId.trim() === "") return alert("Please enter a tracking ID");
@@ -43,14 +42,6 @@ export default function Tracking({ showHeroSection = true }) {
 
   return (
     <>
-      {showHeroSection && (
-        <HeroSection
-          title="Track Your Package"
-          subtitle="Enter your tracking number to get real-time updates on your parcel’s journey—from pickup to delivery."
-          bgImage={trackingImg}
-          height="h-[60vh]"
-        />
-      )}
       <div className="flex flex-col items-center p-6 max-w-xl mx-auto">
         {/* Intro Section */}
         <div className="w-full flex flex-col items-center mt-10">
@@ -80,9 +71,12 @@ export default function Tracking({ showHeroSection = true }) {
               <span>❓</span>
               <span className="text-sm text-gray-600">
                 Having trouble?{" "}
-                <a href="/contact" className="underline text-blue-500">
+                <span
+                  className="underline text-blue-500 cursor-pointer"
+                  onClick={() => navigate("/contact")}
+                >
                   See FAQ
-                </a>
+                </span>
               </span>
             </div>
           </div>
@@ -176,4 +170,6 @@ export default function Tracking({ showHeroSection = true }) {
       </div>
     </>
   );
-}
+};
+
+export default Tracking;

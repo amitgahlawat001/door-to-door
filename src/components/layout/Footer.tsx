@@ -35,26 +35,32 @@ const Footer: React.FC = () => {
 
       <div className="border-t border-gray-700 my-6" />
 
-      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 mb-5">
         <p className="text-sm text-gray-400">
           Copyright {new Date().getFullYear()} All Rights Reserved.
         </p>
 
         <div className="flex space-x-4">
           <a
-            href="#"
+            href="https://facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-blue-600 transition-colors"
           >
             <FaFacebookF className="w-4 h-4" />
           </a>
           <a
-            href="#"
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-blue-400 transition-colors"
+            href="https://x.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-blue-600 transition-colors"
           >
             <FaTwitter className="w-4 h-4" />
           </a>
           <a
-            href="#"
+            href="https://linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-blue-700 transition-colors"
           >
             <FaLinkedinIn className="w-4 h-4" />

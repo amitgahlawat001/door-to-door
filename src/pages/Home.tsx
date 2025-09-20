@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { motion, useScroll, useTransform } from "framer-motion";
-import bgImage from "../assets/images/background/bg-image.jpg";
 import { FaShieldAlt, FaStar, FaTruck, FaUsers } from "react-icons/fa";
-import HeroSection from "../components/HeroSection";
 import Tracking from "./Tracking";
 
 const Home: React.FC = () => {
@@ -15,7 +13,6 @@ const Home: React.FC = () => {
 
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
 
-  // Listen to window resize
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
@@ -31,19 +28,9 @@ const Home: React.FC = () => {
   const y1 = useTransform(scrollY, scrollRange, yRange1);
   const y2 = useTransform(scrollY, scrollRange, yRange2);
 
-  // Features and JSX remain same...
-
   return (
     <div className="relative overflow-hidden">
-      <HeroSection
-        title="Fast, NYC Courier Service"
-        subtitle="Send documents or large shipments, enjoy tailored service, schedule and budget. Vehicles: bikes, cars, vans."
-        bgImage={bgImage}
-        height="h-[60vh]"
-      />
-      <Tracking showHeroSection={false} />
-
-      {/* ...features section unchanged... */}
+      <Tracking />
 
       <section className="py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6 space-y-20">

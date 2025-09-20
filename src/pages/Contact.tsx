@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
-import HeroSection from "../components/HeroSection";
-import headerImage from "../assets/images/heroSectionImage/contactUs.jpg";
 
 const subjects = [
   "General Inquiry",
@@ -23,12 +21,6 @@ const Contact: React.FC = () => {
 
   return (
     <>
-      <HeroSection
-        title="Get in Touch With Us"
-        subtitle="We're here to help — reach out for support, inquiries, or feedback."
-        bgImage={headerImage}
-        height="h-[350px]"
-      />
       <section className="py-12 bg-gray-50 min-h-screen">
         <div className="max-w-4xl md:mx-auto mx-5">
           <h1 className="text-center text-3xl font-bold mb-1">Contact Us</h1>

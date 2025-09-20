@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import img1 from "../assets/images/heroSectionImage/aboutUsHeader.jpg";
 import aboutUs1 from "../assets/images/heroSectionImage/aboutUs1.jpg";
 import aboutUs2 from "../assets/images/heroSectionImage/aboutUs2.jpg";
-import HeroSection from "../components/HeroSection";
+import GoToTop from "../components/common/GoToTop";
 
 const About: React.FC = () => {
   const { scrollY } = useScroll();
@@ -35,12 +34,6 @@ const About: React.FC = () => {
 
   return (
     <>
-      <HeroSection
-        title="About Us"
-        subtitle="Founded in the heart of New York, Start Door To Door is a customer focused courier company dedicated to reliability and speed."
-        bgImage={img1}
-        height="h-[400px]"
-      />
       <section className="bg-white py-10 px-4 sm:px-6 md:px-12 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-8 items-center mb-16">
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 overflow-hidden">
@@ -97,6 +90,7 @@ const About: React.FC = () => {
             Our Features
           </button>
         </div>
+        <GoToTop />
       </section>
     </>
   );

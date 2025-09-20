@@ -5,8 +5,6 @@ import gallery3 from "../assets/images/background/gallery3.jpg";
 import gallery4 from "../assets/images/background/gallery4.jpg";
 import gallery5 from "../assets/images/heroSectionImage/aboutUs2.jpg";
 import gallery6 from "../assets/images/background/gallery6.jpg";
-import headerImg from "../assets/images/heroSectionImage/gallery.jpg";
-import HeroSection from "../components/HeroSection";
 
 const galleryData = [
   {
@@ -37,12 +35,6 @@ const galleryData = [
 
 const Gallery: React.FC = () => (
   <>
-    <HeroSection
-      title="Delivery In Action"
-      subtitle="Explore how we bring reliability and speed to every delivery — from same-day shipping to specialized services."
-      bgImage={headerImg}
-      height="h-[350px]"
-    />
     <section className="py-12 px-4 max-w-7xl mx-auto">
       <h2 className="text-3xl font-bold text-blue-700 mb-8 text-center">
         Delivery In Action

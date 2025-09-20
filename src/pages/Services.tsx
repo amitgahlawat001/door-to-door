@@ -9,8 +9,6 @@ import {
   FaHandsHelping,
 } from "react-icons/fa";
 import { MdMedicalServices, MdSchedule } from "react-icons/md";
-import img1 from "../assets/images/heroSectionImage/servicesHeader.jpg";
-import HeroSection from "../components/HeroSection";
 
 const getServiceIcon = (title: string) => {
   if (title.toLowerCase().includes("same day")) return <FaShippingFast />;
@@ -47,14 +45,6 @@ const Services: React.FC = () => {
 
   return (
     <>
-      <HeroSection
-        title="Our Services"
-        subtitle="We provide fast, secure and reliable courier solutions tailored to your needs. From same-day delivery to specialized handling, we’ve got you covered."
-        bgImage={img1}
-        height="h-[350px]"
-      />
-
-      {/* ✅ Services Section */}
       <section className="py-16 px-6 max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-center text-blue-700 mb-10">
           Delivery Services Overview
