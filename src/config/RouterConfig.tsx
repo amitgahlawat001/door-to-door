@@ -14,7 +14,7 @@ const routes: RouteObject[] = [
     path: "/",
     element: <Layout />,
     children: [
-      { index: true, element: <Home /> },
+      { index: true, path: "/", element: <Home /> },
       { path: "about", element: <About /> },
       { path: "services", element: <Services /> },
       { path: "gallery", element: <Gallery /> },
