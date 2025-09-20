@@ -4,6 +4,7 @@ import { RootState } from "../redux/store";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FaShieldAlt, FaStar, FaTruck, FaUsers } from "react-icons/fa";
 import Tracking from "./Tracking";
+import GoToTop from "../components/common/GoToTop";
 
 const Home: React.FC = () => {
   const { scrollY } = useScroll();
@@ -175,6 +176,7 @@ const Home: React.FC = () => {
           ))}
         </div>
       </section>
+      <GoToTop />
     </div>
   );
 };

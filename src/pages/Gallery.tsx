@@ -5,6 +5,7 @@ import gallery3 from "../assets/images/background/gallery3.jpg";
 import gallery4 from "../assets/images/background/gallery4.jpg";
 import gallery5 from "../assets/images/heroSectionImage/aboutUs2.jpg";
 import gallery6 from "../assets/images/background/gallery6.jpg";
+import GoToTop from "../components/common/GoToTop";
 
 const galleryData = [
   {
@@ -67,6 +68,7 @@ const Gallery: React.FC = () => (
           </div>
         ))}
       </div>
+      <GoToTop />
     </section>
   </>
 );

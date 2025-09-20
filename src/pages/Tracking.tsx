@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import GoToTop from "../components/common/GoToTop";
 interface TrackingUpdate {
   status: string;
   hubAddress: string;
@@ -167,6 +168,7 @@ const Tracking: React.FC = () => {
           }
         `}
         </style>
+        <GoToTop />
       </div>
     </>
   );

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
+import GoToTop from "../components/common/GoToTop";
 
 const subjects = [
   "General Inquiry",
@@ -202,6 +203,7 @@ const Contact: React.FC = () => {
             </div>
           </div>
         </div>
+        <GoToTop />
       </section>
     </>
   );

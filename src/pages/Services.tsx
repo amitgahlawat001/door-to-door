@@ -9,6 +9,7 @@ import {
   FaHandsHelping,
 } from "react-icons/fa";
 import { MdMedicalServices, MdSchedule } from "react-icons/md";
+import GoToTop from "../components/common/GoToTop";
 
 const getServiceIcon = (title: string) => {
   if (title.toLowerCase().includes("same day")) return <FaShippingFast />;
@@ -75,6 +76,7 @@ const Services: React.FC = () => {
             </div>
           ))}
         </div>
+        <GoToTop />
       </section>
     </>
   );
