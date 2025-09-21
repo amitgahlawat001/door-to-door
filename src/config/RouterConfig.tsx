@@ -15,19 +15,12 @@ const routes: RouteObject[] = [
     element: <Layout />,
     children: [
       { index: true, element: <Home /> },
-      { path: "door-to-door", element: <Home /> },
-      {
-        path: "door-to-door/",
-        element: <Navigate to="/door-to-door" replace />,
-      },
-
       { path: "about", element: <About /> },
       { path: "services", element: <Services /> },
       { path: "gallery", element: <Gallery /> },
       { path: "contact", element: <Contact /> },
       { path: "trackshipment", element: <Tracking /> },
-
-      // Catch-all 404
+      { path: "door-to-door/*", element: <Navigate to="/" replace /> },
       { path: "*", element: <PageNotFound /> },
     ],
   },
