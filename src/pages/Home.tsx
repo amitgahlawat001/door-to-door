@@ -31,7 +31,7 @@ const Home: React.FC = () => {
 
   return (
     <div className="relative overflow-hidden">
-      <Tracking />
+      {/* <Tracking /> */}
 
       <section className="py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6 space-y-20">
