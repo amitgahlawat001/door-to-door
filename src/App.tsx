@@ -10,7 +10,7 @@ const AppRoutes: React.FC = () => {
 
 const App: React.FC = () => (
   <Provider store={store}>
-    <Router>
+    <Router basename="/door-to-door">
       <AppRoutes />
     </Router>
   </Provider>
