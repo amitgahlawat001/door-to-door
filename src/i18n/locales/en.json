@@ -1,0 +1,170 @@
+{
+  "home": {
+    "about": "About Us",
+    "aboutTitle": "From Pickup To Delivery, We Move Your Packages Securely",
+    "aboutDesc": "Whether you are sending documents across town or large shipments to clients, we tailor our service to fit your schedule and budget.",
+    "secureDelivery": "Secure Delivery",
+    "fastService": "Fast Service",
+
+    "whyChoose": "Why Choose Us",
+    "whyTitle": "Trusted By Hundreds Of Clients",
+    "whyDesc": "Our fleet includes bikes, cars, and vans to ensure fast, efficient delivery no matter the size of your shipment.",
+    "reliableTeam": "Reliable Team",
+    "guaranteedSafety": "Guaranteed Safety",
+
+    "testimonialsTitle": "Customer Testimonials",
+    "testimonialsDesc": "What our clients say about working with Start Door To Door."
+  },
+  "nav": {
+    "home": "Home",
+    "trackShipment": "Track Shipment",
+    "about": "About",
+    "services": "Services",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "footer": {
+    "overviewTitle": "Company Overview",
+    "overviewText": "With a commitment to excellence and customer satisfaction, we strive to deliver premium quality and innovative solutions tailored to meet your needs.",
+    "contactTitle": "Contact",
+    "headOffice": "Head Office: Start Door To Door, 100 Liberty Street, NY",
+    "phone": "999 673 984",
+    "email": "support@yourdomain.com",
+    "servicesTitle": "Services",
+    "service1": "Scheduled & Time Window Deliveries",
+    "service2": "Large and Heavy Item Delivery",
+    "service3": "Medical and Sensitive Item Courier"
+  },
+  "testimonials": {
+    "t1": {
+      "text": "Start Door To Door consistently delivers on time with careful handling of sensitive items and excellent communication.",
+      "author": "Founder, GreenLeaf Furniture"
+    },
+    "t2": {
+      "text": "Reliable, transparent, and fast. They have become our trusted partner for last mile deliveries.",
+      "author": "Operations Lead, QuickCart"
+    },
+    "t3": {
+      "text": "Professional and courteous team. Our white glove deliveries were smooth and efficient.",
+      "author": "Operations Manager, Skyline Medical"
+    }
+  },
+  "services": {
+    "s1": {
+      "title": "Same Day Delivery",
+      "description": "Pickup and deliver within hours across NYC with real-time tracking and insured shipments."
+    },
+    "s2": {
+      "title": "Scheduled & Time Window Deliveries",
+      "description": "Flexible pickup times and precise delivery windows for your business calendar."
+    },
+    "s3": {
+      "title": "Large and Heavy Item Delivery",
+      "description": "Furniture, appliances, bulky shipments with inside delivery and setup options."
+    },
+    "s4": {
+      "title": "Medical and Sensitive Item Courier",
+      "description": "Secure handling for medical samples, legal documents, with chain of custody."
+    },
+    "s5": {
+      "title": "E-Commerce & Retail Fulfillment",
+      "description": "Streamlined order pickups, last mile delivery, easy returns for retail."
+    },
+    "s6": {
+      "title": "White-Glove Delivery & Installation",
+      "description": "Premium inside delivery, unboxing, setup, and packaging removal."
+    }
+  },
+  "servicesPage": {
+    "title": "Delivery Services Overview",
+    "description": "We offer a full spectrum of courier solutions designed for businesses and individuals. Whether you need urgent same day service or reliable scheduled deliveries, Start Door To Door provides secure handling, live tracking, and competitive pricing."
+  },
+  "hero": {
+    "home": {
+      "title": "Fast, NYC Courier Service",
+      "subtitle": "Send documents or large shipments, enjoy tailored service, schedule and budget. Vehicles: bikes, cars, vans."
+    },
+    "about": {
+      "title": "About Us",
+      "subtitle": "Founded in the heart of New York, Start Door To Door is a customer focused courier company dedicated to reliability and speed."
+    },
+    "services": {
+      "title": "Our Services",
+      "subtitle": "We provide fast, secure and reliable courier solutions tailored to your needs. From same-day delivery to specialized handling, we’ve got you covered."
+    },
+    "gallery": {
+      "title": "Delivery In Action",
+      "subtitle": "Explore how we bring reliability and speed to every delivery — from same-day shipping to specialized services."
+    },
+    "contact": {
+      "title": "Get in Touch With Us",
+      "subtitle": "We're here to help — reach out for support, inquiries, or feedback."
+    },
+    "track": {
+      "title": "Track Your Package",
+      "subtitle": "Enter your tracking number to get real-time updates on your parcel’s journey—from pickup to delivery."
+    }
+  },
+  "about": {
+    "visionTitle": "Vision",
+    "visionText": "Founded in the heart of New York, Start Door To Door is a customer focused courier company dedicated to reliability and speed. We connect businesses and individuals with a seamless door to door delivery experience, powered by advanced routing, safety protocols, and real-time visibility.",
+    "teamTitle": "Professional Team",
+    "teamText": "We believe in transparency, fair pricing, and unmatched service. Our local team knows NYC streets and delivers with a mission to exceed expectations on every delivery.",
+    "featuresBtn": "Our Features"
+  },
+  "tracking": {
+    "title": "Track Your Package Easily",
+    "subtitle": "Enter your tracking ID below for instant updates.",
+    "tip": "Tip: Double-check your tracking ID!",
+    "trouble": "Having trouble?",
+    "faq": "See FAQ",
+    "placeholder": "Enter tracking number (e.g., SW123456789)",
+    "trackBtn": "Track Package",
+    "show": "Show Updates",
+    "hide": "Hide Updates",
+    "updatesTitle": "Tracking Updates",
+    "alert": "Please enter a tracking ID",
+    "status": {
+      "picked": "Parcel Picked Up",
+      "sorting": "Arrived at Sorting Center",
+      "out": "Out for Delivery"
+    }
+  },
+  "contactPage": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with our customer service team",
+    "form": {
+      "title": "Send us a Message",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+      "phone": "Phone Number (Optional)",
+      "subject": "Subject",
+      "selectSubject": "Select a subject",
+      "subjects": {
+        "general": "General Inquiry",
+        "quote": "Request Quote",
+        "partnerships": "Partnerships",
+        "support": "Support"
+      },
+      "message": "Message",
+      "placeholder": "Please describe your inquiry in detail...",
+      "submit": "Send Message",
+      "success": "Thank you! We will contact you soon."
+    },
+    "info": {
+      "title": "Get in Touch",
+      "phone": "Phone",
+      "phoneDetails": "Mon-Fri 8AM-8PM, Sat-Sun 9AM-5PM",
+      "email": "Email",
+      "emailDetails": "We respond within 24 hours",
+      "headquarters": "Headquarters",
+      "hoursTitle": "Business Hours",
+      "weekdays": "Monday - Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday",
+      "urgent": "For urgent matters outside business hours, please use our online tracking system or email support."
+    }
+  }
+}

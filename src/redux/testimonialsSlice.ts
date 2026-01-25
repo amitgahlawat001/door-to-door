@@ -1,25 +1,27 @@
-// src/redux/testimonialsSlice.ts
 import { createSlice } from "@reduxjs/toolkit";
+
 const initialState = [
   {
-    text: "Start Door To Door consistently delivers on time with careful handling of sensitive items and excellent communication.",
-    author: "Founder, GreenLeaf Furniture",
+    textKey: "testimonials.t1.text",
+    authorKey: "testimonials.t1.author",
     image: "https://randomuser.me/api/portraits/men/32.jpg",
   },
   {
-    text: "Reliable, transparent, and fast. They have become our trusted partner for last mile deliveries.",
-    author: "Operations Lead, QuickCart",
+    textKey: "testimonials.t2.text",
+    authorKey: "testimonials.t2.author",
     image: "https://randomuser.me/api/portraits/women/44.jpg",
   },
   {
-    text: "Professional and courteous team. Our white glove deliveries were smooth and efficient.",
-    author: "Operations Manager, Skyline Medical",
+    textKey: "testimonials.t3.text",
+    authorKey: "testimonials.t3.author",
     image: "https://randomuser.me/api/portraits/men/65.jpg",
   },
 ];
+
 const testimonialsSlice = createSlice({
   name: "testimonials",
   initialState,
   reducers: {},
 });
+
 export default testimonialsSlice.reducer;

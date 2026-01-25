@@ -4,47 +4,40 @@ interface HeroSectionDataInterface {
   bgImage: string;
   height: string;
 }
-
 const HeroSectionData: Record<string, HeroSectionDataInterface> = {
   "/": {
-    title: "Fast, NYC Courier Service",
-    subtitle:
-      "Send documents or large shipments, enjoy tailored service, schedule and budget. Vehicles: bikes, cars, vans.",
+    title: "hero.home.title",
+    subtitle: "hero.home.subtitle",
     bgImage: require("../assets/images/background/bg-image.jpg"),
     height: "h-[60vh]",
   },
   "/about": {
-    title: "About Us",
-    subtitle:
-      "Founded in the heart of New York, Start Door To Door is a customer focused courier company dedicated to reliability and speed.",
+    title: "hero.about.title",
+    subtitle: "hero.about.subtitle",
     bgImage: require("../assets/images/heroSectionImage/aboutUsHeader.jpg"),
     height: "h-[400px]",
   },
   "/services": {
-    title: "Our Services",
-    subtitle:
-      "We provide fast, secure and reliable courier solutions tailored to your needs. From same-day delivery to specialized handling, we’ve got you covered.",
+    title: "hero.services.title",
+    subtitle: "hero.services.subtitle",
     bgImage: require("../assets/images/heroSectionImage/servicesHeader.jpg"),
     height: "h-[350px]",
   },
   "/gallery": {
-    title: "Delivery In Action",
-    subtitle:
-      "Explore how we bring reliability and speed to every delivery — from same-day shipping to specialized services.",
+    title: "hero.gallery.title",
+    subtitle: "hero.gallery.subtitle",
     bgImage: require("../assets/images/heroSectionImage/gallery.jpg"),
     height: "h-[350px]",
   },
   "/contact": {
-    title: "Get in Touch With Us",
-    subtitle:
-      "We're here to help — reach out for support, inquiries, or feedback.",
+    title: "hero.contact.title",
+    subtitle: "hero.contact.subtitle",
     bgImage: require("../assets/images/heroSectionImage/contactUs.jpg"),
     height: "h-[350px]",
   },
   "/trackshipment": {
-    title: "Track Your Package",
-    subtitle:
-      "Enter your tracking number to get real-time updates on your parcel’s journey—from pickup to delivery.",
+    title: "hero.track.title",
+    subtitle: "hero.track.subtitle",
     bgImage: require("../assets/images/heroSectionImage/tracking.jpg"),
     height: "h-[60vh]",
   },

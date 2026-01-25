@@ -1,34 +1,38 @@
 import React from "react";
 import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <footer className="bg-gray-900 text-gray-200 pt-12">
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10 text-left">
         <div>
-          <h3 className="text-lg font-semibold mb-4">Company Overview</h3>
-          <p className="text-sm leading-relaxed">
-            With a commitment to excellence and customer satisfaction, we strive
-            to deliver premium quality and innovative solutions tailored to meet
-            your needs.
-          </p>
+          <h3 className="text-lg font-semibold mb-4">
+            {t("footer.overviewTitle")}
+          </h3>
+          <p className="text-sm leading-relaxed">{t("footer.overviewText")}</p>
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold mb-4">Contact</h3>
+          <h3 className="text-lg font-semibold mb-4">
+            {t("footer.contactTitle")}
+          </h3>
           <ul className="space-y-2 text-sm">
-            <li>📍 Head Office: Start Door To Door, 100 Liberty Street, NY</li>
-            <li>📞 999 673 984</li>
-            <li>✉️ support@yourdomain.com</li>
+            <li>📍 {t("footer.headOffice")}</li>
+            <li>📞 {t("footer.phone")}</li>
+            <li>✉️ {t("footer.email")}</li>
           </ul>
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold mb-4">Services</h3>
+          <h3 className="text-lg font-semibold mb-4">
+            {t("footer.servicesTitle")}
+          </h3>
           <ul className="space-y-2 text-sm">
-            <li>Scheduled &amp; Time Window Deliveries</li>
-            <li>Large and Heavy Item Delivery</li>
-            <li>Medical and Sensitive Item Courier</li>
+            <li>{t("footer.service1")}</li>
+            <li>{t("footer.service2")}</li>
+            <li>{t("footer.service3")}</li>
           </ul>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 interface HeroSectionProps {
   title: string;
@@ -14,6 +15,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   bgImage,
   height = "h-[300px]",
 }) => {
+  const { t } = useTranslation();
+
   return (
     <section
       className={`relative flex items-center justify-center text-center ${height}`}
@@ -24,7 +27,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       }}
     >
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+      <div className="absolute inset-0 bg-black bg-opacity-60" />
 
       {/* Content */}
       <div className="relative z-10 px-4">
@@ -35,7 +38,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-extrabold text-white mb-4"
         >
-          {title}
+          {t(title)}
         </motion.h1>
 
         {subtitle && (
@@ -46,7 +49,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             viewport={{ once: true }}
             className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto"
           >
-            {subtitle}
+            {t(subtitle)}
           </motion.p>
         )}
       </div>

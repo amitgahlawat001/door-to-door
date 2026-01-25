@@ -1,40 +1,42 @@
-// src/redux/servicesSlice.ts
 import { createSlice } from "@reduxjs/toolkit";
+
 const initialState = [
   {
-    title: "Same Day Delivery",
-    description:
-      "Pickup and deliver within hours across NYC with real-time tracking and insured shipments.",
+    type: "same_day",
+    titleKey: "services.s1.title",
+    descriptionKey: "services.s1.description",
   },
   {
-    title: "Scheduled & Time Window Deliveries",
-    description:
-      "Flexible pickup times and precise delivery windows for your business calendar.",
+    type: "scheduled",
+    titleKey: "services.s2.title",
+    descriptionKey: "services.s2.description",
   },
   {
-    title: "Large and Heavy Item Delivery",
-    description:
-      "Furniture, appliances, bulky shipments with inside delivery and setup options.",
+    type: "heavy",
+    titleKey: "services.s3.title",
+    descriptionKey: "services.s3.description",
   },
   {
-    title: "Medical and Sensitive Item Courier",
-    description:
-      "Secure handling for medical samples, legal documents, with chain of custody.",
+    type: "medical",
+    titleKey: "services.s4.title",
+    descriptionKey: "services.s4.description",
   },
   {
-    title: "E-Commerce & Retail Fulfillment",
-    description:
-      "Streamlined order pickups, last mile delivery, easy returns for retail.",
+    type: "ecommerce",
+    titleKey: "services.s5.title",
+    descriptionKey: "services.s5.description",
   },
   {
-    title: "White-Glove Delivery & Installation",
-    description:
-      "Premium inside delivery, unboxing, setup, and packaging removal.",
+    type: "white_glove",
+    titleKey: "services.s6.title",
+    descriptionKey: "services.s6.description",
   },
 ];
+
 const servicesSlice = createSlice({
   name: "services",
   initialState,
   reducers: {},
 });
+
 export default servicesSlice.reducer;
