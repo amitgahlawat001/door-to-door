@@ -1,11 +1,12 @@
 {
   "files": {
-    "main.css": "/door-to-door/static/css/main.e8141b9e.css",
-    "main.js": "/door-to-door/static/js/main.edec81da.js",
-    "static/js/453.657dbcb1.chunk.js": "/door-to-door/static/js/453.657dbcb1.chunk.js",
+    "main.css": "/door-to-door/static/css/main.66cb01ba.css",
+    "main.js": "/door-to-door/static/js/main.f85fd7c5.js",
+    "static/js/669.f5636964.chunk.js": "/door-to-door/static/js/669.f5636964.chunk.js",
+    "static/js/453.bd088aac.chunk.js": "/door-to-door/static/js/453.bd088aac.chunk.js",
+    "static/js/639.aa870426.chunk.js": "/door-to-door/static/js/639.aa870426.chunk.js",
     "static/media/aboutUs1.jpg": "/door-to-door/static/media/aboutUs1.ea38ab216a2d30525f21.jpg",
     "static/media/gallery6.jpg": "/door-to-door/static/media/gallery6.a30ead435ddfb4233072.jpg",
-    "static/media/gallery.jpg": "/door-to-door/static/media/gallery.c8a0c91d1ebcf12fdf1c.jpg",
     "static/media/tracking.jpg": "/door-to-door/static/media/tracking.86cd7026cdf61d8bd216.jpg",
     "static/media/contactUs.jpg": "/door-to-door/static/media/contactUs.ab06aeaa138424e3d68b.jpg",
     "static/media/gallery2.jpg": "/door-to-door/static/media/gallery2.03619b52bf1052b48d56.jpg",
@@ -17,12 +18,23 @@
     "static/media/servicesHeader.jpg": "/door-to-door/static/media/servicesHeader.6d7d6d95655159027821.jpg",
     "static/media/bg-image.jpg": "/door-to-door/static/media/bg-image.980c116bb0f36cc5b468.jpg",
     "index.html": "/door-to-door/index.html",
-    "main.e8141b9e.css.map": "/door-to-door/static/css/main.e8141b9e.css.map",
-    "main.edec81da.js.map": "/door-to-door/static/js/main.edec81da.js.map",
-    "453.657dbcb1.chunk.js.map": "/door-to-door/static/js/453.657dbcb1.chunk.js.map"
+    "static/media/route-network.svg": "/door-to-door/static/media/route-network.e43f0f283c46b080d025a13add730d90.svg",
+    "static/media/ambient-lines.svg": "/door-to-door/static/media/ambient-lines.8d823c350dae61f8560579cb6d77554f.svg",
+    "static/media/support.svg": "/door-to-door/static/media/support.d20d67091db8db7f2fd37c7c01ac0c2a.svg",
+    "static/media/pickup.svg": "/door-to-door/static/media/pickup.8b4ed374bb8f9a74aef8a836a4875e52.svg",
+    "static/media/transit.svg": "/door-to-door/static/media/transit.f243c135f26b35c8261843cf1c1e0456.svg",
+    "static/media/tracking.svg": "/door-to-door/static/media/tracking.619aa413c94b10a49378adfbb20e9132.svg",
+    "static/media/warehouse.svg": "/door-to-door/static/media/warehouse.303c2f2ba55d4bff911480156193c718.svg",
+    "static/media/secure.svg": "/door-to-door/static/media/secure.0350e970bd82fb1332e97bac0fc9b636.svg",
+    "static/media/delivery.svg": "/door-to-door/static/media/delivery.1d477970d14443e0d03d650e00fcf027.svg",
+    "main.66cb01ba.css.map": "/door-to-door/static/css/main.66cb01ba.css.map",
+    "main.f85fd7c5.js.map": "/door-to-door/static/js/main.f85fd7c5.js.map",
+    "669.f5636964.chunk.js.map": "/door-to-door/static/js/669.f5636964.chunk.js.map",
+    "453.bd088aac.chunk.js.map": "/door-to-door/static/js/453.bd088aac.chunk.js.map",
+    "639.aa870426.chunk.js.map": "/door-to-door/static/js/639.aa870426.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e8141b9e.css",
-    "static/js/main.edec81da.js"
+    "static/css/main.66cb01ba.css",
+    "static/js/main.f85fd7c5.js"
   ]
 }
