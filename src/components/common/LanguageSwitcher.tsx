@@ -6,18 +6,17 @@ interface Props {
 }
 
 const LanguageSwitcher: React.FC<Props> = ({ onChange }) => {
-  const { i18n } = useTranslation();
-
-  const changeLanguage = (lang: string) => {
-    i18n.changeLanguage(lang);
-    onChange?.();
-  };
+  const { t, i18n } = useTranslation();
 
   return (
     <select
+      aria-label={t("nav.language")}
       value={i18n.language}
-      onChange={(e) => changeLanguage(e.target.value)}
-      className="bg-white text-blue-800 rounded px-2 py-1 font-medium outline-none cursor-pointer"
+      onChange={(e) => {
+        i18n.changeLanguage(e.target.value);
+        onChange?.();
+      }}
+      className="cursor-pointer rounded-full border border-white/20 bg-transparent px-3 py-1.5 text-sm font-medium text-paper outline-none [&>option]:text-ink"
     >
       <option value="en">English</option>
       <option value="hi">हिंदी</option>

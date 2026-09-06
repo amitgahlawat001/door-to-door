@@ -1,95 +1,132 @@
-import React, { useState, useEffect } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import aboutUs1 from "../assets/images/heroSectionImage/aboutUs1.jpg";
 import aboutUs2 from "../assets/images/heroSectionImage/aboutUs2.jpg";
-import GoToTop from "../components/common/GoToTop";
+import Button from "../components/ui/Button";
+import { company } from "../config/siteContent";
+
+const reveal = {
+  initial: { opacity: 0, y: 28 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-80px" },
+  transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as const },
+};
+
+const PRINCIPLES = ["p1", "p2", "p3"];
+const CARE = ["h1", "h2", "h3", "h4"];
 
 const About: React.FC = () => {
   const { t } = useTranslation();
-  const { scrollY } = useScroll();
-  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
-
-  useEffect(() => {
-    const resize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener("resize", resize);
-    return () => window.removeEventListener("resize", resize);
-  }, []);
-
-  const parallaxDistance = windowWidth < 768 ? 25 : 100;
-
-  const y1 = useTransform(
-    scrollY,
-    [0, 250, 500],
-    [-parallaxDistance, 0, parallaxDistance]
-  );
-  const y2 = useTransform(
-    scrollY,
-    [0, 250, 500],
-    [parallaxDistance, 0, -parallaxDistance]
-  );
-
-  const teamImages = [
-    "https://randomuser.me/api/portraits/women/44.jpg",
-    "https://randomuser.me/api/portraits/men/46.jpg",
-    "https://randomuser.me/api/portraits/women/68.jpg",
-  ];
 
   return (
-    <section className="bg-white py-10 px-4 sm:px-6 md:px-12 max-w-7xl mx-auto">
-      <div className="grid md:grid-cols-2 gap-8 items-center mb-16">
-        <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 overflow-hidden">
-          <motion.img
-            src={aboutUs1}
-            alt="Vision 1"
-            style={{ y: y1 }}
-            className="w-full md:w-1/2 h-40 md:h-64 object-cover rounded-tl-[50px] rounded-br-[50px] shadow-lg"
-          />
-          <motion.img
-            src={aboutUs2}
-            alt="Vision 2"
-            style={{ y: y2 }}
-            className="w-full md:w-1/2 h-40 md:h-64 object-cover rounded-tr-[50px] rounded-bl-[50px] shadow-lg"
-          />
-        </div>
-
-        <div>
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
-            {t("about.visionTitle")}
-          </h2>
-          <p className="text-gray-700 text-lg leading-relaxed">
-            {t("about.visionText")}
-          </p>
-        </div>
-      </div>
-
-      <div className="text-center">
-        <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
-          {t("about.teamTitle")}
-        </h2>
-        <p className="text-gray-700 max-w-2xl mx-auto mb-10">
-          {t("about.teamText")}
-        </p>
-
-        <div className="flex justify-center gap-8 mb-8">
-          {teamImages.map((img, i) => (
-            <motion.img
-              key={i}
-              src={img}
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: "spring", stiffness: 200 }}
-              className="w-28 h-28 rounded-full shadow-lg border-4 border-white hover:border-blue-600"
+    <>
+      <section className="bg-paper py-24 md:py-32">
+        <div className="shell grid items-center gap-14 lg:grid-cols-2">
+          <motion.div {...reveal} className="grid grid-cols-2 gap-5">
+            <img
+              src={aboutUs1}
+              alt=""
+              loading="lazy"
+              className="h-56 w-full rounded-2xl object-cover md:h-80"
             />
-          ))}
+            <img
+              src={aboutUs2}
+              alt=""
+              loading="lazy"
+              className="mt-10 h-56 w-full rounded-2xl object-cover md:h-80"
+            />
+          </motion.div>
+
+          <motion.div {...reveal}>
+            <p className="eyebrow">{t("about.visionTitle")}</p>
+            <h2 className="mt-5 font-display text-headline font-semibold text-ink">
+              {t("hero.about.title")}
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed text-muted">
+              {t("about.visionText")}
+            </p>
+          </motion.div>
         </div>
+      </section>
 
-        <button className="px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition">
-          {t("about.featuresBtn")}
-        </button>
-      </div>
+      {/* How we work */}
+      <section className="bg-soft py-24 md:py-32">
+        <div className="shell">
+          <p className="eyebrow">{t("about.principlesTitle")}</p>
+          <h2 className="mt-5 max-w-2xl font-display text-headline font-semibold text-ink">
+            {t("about.teamHeadline")}
+          </h2>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
+            {t("about.teamText")}
+          </p>
 
-      <GoToTop />
-    </section>
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
+            {PRINCIPLES.map((p, i) => (
+              <motion.div
+                key={p}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-70px" }}
+                transition={{ duration: 0.6, delay: i * 0.09, ease: [0.16, 1, 0.3, 1] }}
+                className="group rounded-2xl bg-white p-8 transition-all duration-500 ease-premium hover:-translate-y-1.5 hover:shadow-[0_28px_60px_-34px_rgba(11,27,43,0.5)]"
+              >
+                <span
+                  aria-hidden="true"
+                  className="block h-px w-10 origin-left bg-accent transition-transform duration-500 ease-premium group-hover:scale-x-[2.4]"
+                />
+                <h3 className="mt-6 font-display text-xl font-semibold text-ink">
+                  {t(`about.${p}Title`)}
+                </h3>
+                <p className="mt-3 text-[15px] leading-relaxed text-muted">
+                  {t(`about.${p}Copy`)}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Handling standards */}
+      <section className="grain relative bg-deep py-24 md:py-32">
+        <div className="shell">
+          <p className="eyebrow text-accent">{t("handling.eyebrow")}</p>
+          <h2 className="mt-5 max-w-2xl font-display text-headline font-semibold text-paper">
+            {t("handling.title")}
+          </h2>
+
+          <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            {CARE.map((c, i) => (
+              <motion.div
+                key={c}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-70px" }}
+                transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                className="border-t border-white/15 pt-6"
+              >
+                <h3 className="font-display text-lg font-semibold text-paper">
+                  {t(`handling.${c}.title`)}
+                </h3>
+                <p className="mt-3 text-[15px] leading-relaxed text-paper/60">
+                  {t(`handling.${c}.copy`)}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="mt-16 flex flex-wrap items-center gap-4">
+            <Button to="/services">{t("servicesSection.all")}</Button>
+            <a
+              href={company.phoneHref}
+              className="text-sm font-semibold text-paper/70 underline underline-offset-4 hover:text-accent"
+            >
+              {company.phone}
+            </a>
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 

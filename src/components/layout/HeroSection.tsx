@@ -13,30 +13,28 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   title,
   subtitle,
   bgImage,
-  height = "h-[300px]",
+  height = "h-[52vh] min-h-[380px]",
 }) => {
   const { t } = useTranslation();
 
   return (
     <section
-      className={`relative flex items-center justify-center text-center ${height}`}
-      style={{
-        backgroundImage: `url(${bgImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+      className={`grain relative flex items-end overflow-hidden bg-deep ${height}`}
     >
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-60" />
+      <img
+        src={bgImage}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover opacity-55"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-deep via-deep/70 to-deep/30" />
 
-      {/* Content */}
-      <div className="relative z-10 px-4">
+      <div className="shell relative z-10 pb-14 pt-28">
         <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-extrabold text-white mb-4"
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-4xl font-display text-headline font-semibold text-paper"
         >
           {t(title)}
         </motion.h1>
@@ -44,10 +42,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         {subtitle && (
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            viewport={{ once: true }}
-            className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto"
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-5 max-w-2xl text-lg text-paper/70"
           >
             {t(subtitle)}
           </motion.p>

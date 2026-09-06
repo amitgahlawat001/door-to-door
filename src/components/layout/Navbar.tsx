@@ -1,107 +1,169 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
+import { FiMenu, FiX } from "react-icons/fi";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "../common/LanguageSwitcher";
+import Button from "../ui/Button";
+import { company } from "../../config/siteContent";
 
 const links = [
-  { to: "/", key: "home" },
-  { to: "/trackshipment", key: "trackShipment" },
-  { to: "/about", key: "about" },
   { to: "/services", key: "services" },
+  { to: "/about", key: "about" },
   { to: "/gallery", key: "gallery" },
   { to: "/contact", key: "contact" },
 ];
 
 const Navbar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslation();
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+  const location = useLocation();
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Close the drawer on navigation and lock the page behind it.
+  useEffect(() => setOpen(false), [location.pathname]);
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   return (
-    <>
-      <nav className="bg-gradient-to-r from-blue-700 to-indigo-800 shadow-lg p-4">
-        <div className="container mx-auto flex justify-between items-center">
-          {/* Logo */}
-          <span className="text-2xl font-extrabold text-white">
-            Start Door To Door
-          </span>
-
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center space-x-6">
-            {links.map((link) => (
-              <NavLink key={link.to} to={link.to} end={link.to === "/"}>
-                {({ isActive }) => (
-                  <span
-                    className={`font-medium transition ${
-                      isActive
-                        ? "text-yellow-300"
-                        : "text-white hover:text-yellow-300"
-                    }`}
-                  >
-                    {t(`nav.${link.key}`)}
-                  </span>
-                )}
-              </NavLink>
-            ))}
-            <LanguageSwitcher />
-          </div>
-
-          {/* Mobile Actions */}
-          <div className="flex items-center space-x-3 md:hidden">
-            {/* Language Switcher (Mobile) */}
-            <LanguageSwitcher />
-
-            {/* Hamburger */}
-            <button
-              className="text-white text-2xl"
-              onClick={toggleMenu}
-              aria-label="Toggle menu"
-            >
-              ☰
-            </button>
-          </div>
-        </div>
-      </nav>
-
-      {/* Mobile Drawer */}
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-premium ${
+        scrolled
+          ? "border-b border-white/10 bg-deep shadow-lg shadow-deep/20"
+          : "bg-transparent"
+      }`}
+    >
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-gradient-to-b from-blue-700 to-indigo-800 transition-transform duration-300 z-50 ${
-          isOpen ? "translate-x-0" : "translate-x-full"
+        className={`shell flex items-center justify-between transition-all duration-500 ${
+          scrolled ? "py-3" : "py-5"
         }`}
       >
-        <div className="p-6 flex flex-col space-y-6">
-          <button className="self-end text-white text-xl" onClick={toggleMenu}>
-            ✕
-          </button>
+        <Link
+          to="/"
+          className="flex items-center gap-2.5 text-paper"
+          aria-label={company.name}
+        >
+          <span className="grid h-8 w-8 place-items-center rounded-lg bg-accent text-ink">
+            <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden="true">
+              <path
+                d="M3 8l9-4 9 4-9 4-9-4zm0 0v8l9 4 9-4V8"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </span>
+          <span className="font-display text-[17px] font-semibold tracking-tight">
+            {company.shortName}
+          </span>
+        </Link>
 
+        <nav className="hidden items-center gap-8 lg:flex" aria-label="Main">
           {links.map((link) => (
-            <NavLink key={link.to} to={link.to} end={link.to === "/"}>
-              {({ isActive }) => (
-                <span
-                  onClick={toggleMenu}
-                  className={`block text-lg font-medium ${
-                    isActive
-                      ? "text-yellow-300"
-                      : "text-white hover:text-yellow-300"
-                  }`}
-                >
-                  {t(`nav.${link.key}`)}
-                </span>
-              )}
+            <NavLink
+              key={link.to}
+              to={link.to}
+              className={({ isActive }) =>
+                `text-sm font-medium transition-colors ${
+                  isActive ? "text-accent" : "text-paper/80 hover:text-paper"
+                }`
+              }
+            >
+              {t(`nav.${link.key}`)}
             </NavLink>
           ))}
+        </nav>
+
+        <div className="hidden items-center gap-4 lg:flex">
+          <LanguageSwitcher />
+          <Button to="/trackshipment" className="!px-5 !py-2.5">
+            {t("nav.trackShipment")}
+          </Button>
+        </div>
+
+        <div className="flex items-center gap-3 lg:hidden">
+          <LanguageSwitcher />
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            aria-label={t("nav.openMenu")}
+            aria-expanded={open}
+            className="grid h-10 w-10 place-items-center rounded-full border border-white/20 text-paper"
+          >
+            <FiMenu size={20} />
+          </button>
         </div>
       </div>
 
-      {/* Overlay */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40"
-          onClick={toggleMenu}
-        />
-      )}
-    </>
+      <AnimatePresence>
+        {open && (
+          <>
+            <motion.div
+              className="fixed inset-0 z-40 bg-deep/70 backdrop-blur-sm lg:hidden"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setOpen(false)}
+            />
+            <motion.div
+              className="fixed inset-y-0 right-0 z-50 flex w-[86%] max-w-sm flex-col bg-deep px-8 py-6 lg:hidden"
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "tween", duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                aria-label={t("nav.closeMenu")}
+                className="self-end p-2 text-paper"
+              >
+                <FiX size={24} />
+              </button>
+
+              <nav className="mt-6 flex flex-col gap-1" aria-label="Mobile">
+                {[{ to: "/", key: "home" }, ...links].map((link, i) => (
+                  <motion.div
+                    key={link.to}
+                    initial={{ opacity: 0, x: 24 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.08 + i * 0.05, duration: 0.4 }}
+                  >
+                    <NavLink
+                      to={link.to}
+                      end={link.to === "/"}
+                      className={({ isActive }) =>
+                        `block border-b border-white/10 py-4 font-display text-2xl ${
+                          isActive ? "text-accent" : "text-paper"
+                        }`
+                      }
+                    >
+                      {t(`nav.${link.key}`)}
+                    </NavLink>
+                  </motion.div>
+                ))}
+              </nav>
+
+              <Button to="/trackshipment" className="mt-8 w-full">
+                {t("nav.trackShipment")}
+              </Button>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </header>
   );
 };
 

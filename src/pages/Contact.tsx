@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
-import GoToTop from "../components/common/GoToTop";
+import { FiMail, FiMapPin, FiPhone } from "react-icons/fi";
 import { useTranslation } from "react-i18next";
+import Button from "../components/ui/Button";
+import { company } from "../config/siteContent";
 
 const subjectKeys = [
   "contactPage.form.subjects.general",
@@ -9,6 +10,10 @@ const subjectKeys = [
   "contactPage.form.subjects.partnerships",
   "contactPage.form.subjects.support",
 ];
+
+const field =
+  "w-full rounded-xl border border-ink/15 bg-white px-4 py-3 text-ink outline-none transition-colors focus:border-brand";
+const labelCls = "mb-2 block text-sm font-medium text-ink";
 
 const Contact: React.FC = () => {
   const { t } = useTranslation();
@@ -22,217 +27,226 @@ const Contact: React.FC = () => {
     message: "",
   });
 
-  return (
-    <>
-      <section className="py-12 bg-gray-50 min-h-screen">
-        <div className="max-w-4xl md:mx-auto mx-5">
-          <h1 className="text-center text-3xl font-bold mb-1">
-            {t("contactPage.title")}
-          </h1>
-          <p className="text-center text-gray-500 mb-8">
-            {t("contactPage.subtitle")}
-          </p>
-          <div className="flex flex-col md:flex-row gap-6 items-stretch">
-            {/* Left Column: Form */}
-            <div className="flex-1 bg-white rounded-lg shadow p-6">
-              <h2 className="text-lg font-semibold mb-4">
-                {t("contactPage.form.title")}
-              </h2>
-              {!submitted ? (
-                <form
-                  className="space-y-4"
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    setSubmitted(true);
-                  }}
-                >
-                  <div className="flex gap-4">
-                    <div className="flex-1">
-                      <label className="block text-sm mb-1">
-                        {t("contactPage.form.firstName")}
-                      </label>
-                      <input
-                        required
-                        type="text"
-                        className="w-full border rounded px-3 py-2"
-                        value={values.firstName}
-                        onChange={(e) =>
-                          setValues((v) => ({
-                            ...v,
-                            firstName: e.target.value,
-                          }))
-                        }
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <label className="block text-sm mb-1">
-                        {t("contactPage.form.lastName")}
-                      </label>
-                      <input
-                        required
-                        type="text"
-                        className="w-full border rounded px-3 py-2"
-                        value={values.lastName}
-                        onChange={(e) =>
-                          setValues((v) => ({ ...v, lastName: e.target.value }))
-                        }
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="block text-sm mb-1">
-                      {t("contactPage.form.email")}
-                    </label>
-                    <input
-                      required
-                      type="email"
-                      className="w-full border rounded px-3 py-2"
-                      value={values.email}
-                      onChange={(e) =>
-                        setValues((v) => ({ ...v, email: e.target.value }))
-                      }
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm mb-1">
-                      {t("contactPage.form.phone")}
-                    </label>
-                    <input
-                      type="tel"
-                      className="w-full border rounded px-3 py-2"
-                      value={values.phone}
-                      onChange={(e) =>
-                        setValues((v) => ({ ...v, phone: e.target.value }))
-                      }
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm mb-1">
-                      {t("contactPage.form.subject")}
-                    </label>
-                    <select
-                      required
-                      className="w-full border rounded px-3 py-2"
-                      value={values.subject}
-                      onChange={(e) =>
-                        setValues((v) => ({ ...v, subject: e.target.value }))
-                      }
-                    >
-                      <option value="">
-                        {t("contactPage.form.selectSubject")}
-                      </option>
-                      {subjectKeys.map((key) => (
-                        <option key={key} value={t(key)}>
-                          {t(key)}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm mb-1">
-                      {t("contactPage.form.message")}
-                    </label>
-                    <textarea
-                      required
-                      className="w-full border rounded px-3 py-2"
-                      rows={4}
-                      placeholder={t("contactPage.form.placeholder")}
-                      value={values.message}
-                      onChange={(e) =>
-                        setValues((v) => ({ ...v, message: e.target.value }))
-                      }
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="bg-blue-600 text-white font-semibold rounded px-4 py-2 w-full hover:bg-blue-700"
-                  >
-                    {t("contactPage.form.submit")}
-                  </button>
-                </form>
-              ) : (
-                <div className="bg-green-100 p-4 rounded text-green-700 text-center font-bold">
-                  {t("contactPage.form.success")}
-                </div>
-              )}
-            </div>
+  const set = (key: keyof typeof values) => (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => setValues((v) => ({ ...v, [key]: e.target.value }));
 
-            {/* Right Column: Contact & Hours Info */}
-            <div className="flex-1 flex flex-col gap-6">
-              <div className="bg-white rounded-lg shadow p-6 flex flex-col gap-4">
-                <h3 className="text-lg font-semibold mb-4">
-                  {t("contactPage.info.title")}
-                </h3>
-                <div className="space-y-3">
-                  <div className="flex items-start gap-3">
-                    <FiPhone className="text-blue-600 text-xl flex-shrink-0 mt-1" />
-                    <div>
-                      <div className="text-gray-900 font-medium">
-                        {t("contactPage.info.phone")}
-                      </div>
-                      <div className="text-gray-600 text-sm">
-                        1-800-SWIFT-99 <br />
-                        {t("contactPage.info.phoneDetails")}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <FiMail className="text-blue-600 text-xl flex-shrink-0 mt-1" />
-                    <div>
-                      <div className="text-gray-900 font-medium">
-                        {t("contactPage.info.email")}
-                      </div>
-                      <div className="text-gray-600 text-sm">
-                        support@swiftcourier.com <br />
-                        {t("contactPage.info.emailDetails")}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <FiMapPin className="text-blue-600 text-xl flex-shrink-0 mt-1" />
-                    <div>
-                      <div className="text-gray-900 font-medium">
-                        {t("contactPage.info.headquarters")}
-                      </div>
-                      <div className="text-gray-600 text-sm">
-                        123 Swift Avenue
-                        <br />
-                        New York, NY 10001
-                        <br />
-                        United States
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-white rounded-lg shadow p-6">
-                <h3 className="text-lg font-semibold mb-4">
-                  {t("contactPage.info.hoursTitle")}
-                </h3>
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between">
-                    <span>{t("contactPage.info.weekdays")}</span>
-                    <span>8:00 AM - 8:00 PM</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>{t("contactPage.info.saturday")}</span>
-                    <span>9:00 AM - 5:00 PM</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>{t("contactPage.info.sunday")}</span>
-                    <span>9:00 AM - 5:00 PM</span>
-                  </div>
-                </div>
-                <div className="mt-4 bg-gray-50 p-3 rounded text-xs text-gray-600 border">
-                  {t("contactPage.info.urgent")}
-                </div>
-              </div>
+  // TODO(owner): POST `values` to the real inbox/CRM endpoint. The form is
+  // client-only today, exactly as it was before the redesign.
+  const submit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
+  return (
+    <section className="bg-soft py-24 md:py-32">
+      <div className="shell grid gap-14 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
+        <div className="rounded-3xl bg-white p-8 shadow-[0_24px_60px_-40px_rgba(11,27,43,0.4)] md:p-10">
+          <h2 className="font-display text-3xl font-semibold text-ink">
+            {t("contactPage.form.title")}
+          </h2>
+
+          {submitted ? (
+            <div
+              role="status"
+              className="mt-8 rounded-2xl bg-brand/10 p-8 text-center"
+            >
+              <p className="font-display text-xl font-semibold text-ink">
+                {t("contactPage.form.success")}
+              </p>
             </div>
+          ) : (
+            <form onSubmit={submit} className="mt-8 space-y-5">
+              <div className="grid gap-5 sm:grid-cols-2">
+                <div>
+                  <label htmlFor="firstName" className={labelCls}>
+                    {t("contactPage.form.firstName")}
+                  </label>
+                  <input
+                    id="firstName"
+                    required
+                    className={field}
+                    value={values.firstName}
+                    onChange={set("firstName")}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="lastName" className={labelCls}>
+                    {t("contactPage.form.lastName")}
+                  </label>
+                  <input
+                    id="lastName"
+                    required
+                    className={field}
+                    value={values.lastName}
+                    onChange={set("lastName")}
+                  />
+                </div>
+              </div>
+
+              <div className="grid gap-5 sm:grid-cols-2">
+                <div>
+                  <label htmlFor="email" className={labelCls}>
+                    {t("contactPage.form.email")}
+                  </label>
+                  <input
+                    id="email"
+                    type="email"
+                    required
+                    className={field}
+                    value={values.email}
+                    onChange={set("email")}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phone" className={labelCls}>
+                    {t("contactPage.form.phone")}
+                  </label>
+                  <input
+                    id="phone"
+                    type="tel"
+                    className={field}
+                    value={values.phone}
+                    onChange={set("phone")}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="subject" className={labelCls}>
+                  {t("contactPage.form.subject")}
+                </label>
+                <select
+                  id="subject"
+                  required
+                  className={field}
+                  value={values.subject}
+                  onChange={set("subject")}
+                >
+                  <option value="">{t("contactPage.form.selectSubject")}</option>
+                  {subjectKeys.map((key) => (
+                    <option key={key} value={t(key)}>
+                      {t(key)}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div>
+                <label htmlFor="message" className={labelCls}>
+                  {t("contactPage.form.message")}
+                </label>
+                <textarea
+                  id="message"
+                  required
+                  rows={5}
+                  className={field}
+                  placeholder={t("contactPage.form.placeholder")}
+                  value={values.message}
+                  onChange={set("message")}
+                />
+              </div>
+
+              <Button type="submit" className="w-full">
+                {t("contactPage.form.submit")}
+              </Button>
+            </form>
+          )}
+        </div>
+
+        <div className="space-y-10">
+          <div>
+            <h3 className="font-display text-2xl font-semibold text-ink">
+              {t("contactPage.info.title")}
+            </h3>
+            <ul className="mt-7 space-y-6">
+              <li className="flex gap-4">
+                <FiPhone className="mt-1 shrink-0 text-xl text-brand" />
+                <div>
+                  <p className="font-medium text-ink">
+                    <a href={company.phoneHref}>{company.phone}</a>
+                  </p>
+                  <p className="text-[15px] text-muted">
+                    {t("contactPage.info.phoneDetails")}
+                  </p>
+                </div>
+              </li>
+              <li className="flex gap-4">
+                <FiMail className="mt-1 shrink-0 text-xl text-brand" />
+                <div>
+                  <p className="font-medium text-ink">
+                    <a href={`mailto:${company.email}`}>{company.email}</a>
+                  </p>
+                  <p className="text-[15px] text-muted">
+                    {t("contactPage.info.emailDetails")}
+                  </p>
+                </div>
+              </li>
+              <li className="flex gap-4">
+                <FiMapPin className="mt-1 shrink-0 text-xl text-brand" />
+                <div>
+                  <p className="font-medium text-ink">
+                    {t("contactPage.info.headquarters")}
+                  </p>
+                  <p className="text-[15px] text-muted">{company.address}</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div className="rounded-3xl bg-white p-7">
+            <h3 className="font-display text-lg font-semibold text-ink">
+              {t("quote.title")}
+            </h3>
+            <ul className="mt-5 space-y-3">
+              {["i1", "i2", "i3", "i4"].map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 text-[15px] leading-relaxed text-muted"
+                >
+                  <svg
+                    viewBox="0 0 20 20"
+                    className="mt-[3px] h-4 w-4 shrink-0 text-brand"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="m4 10.5 4 4 8-9"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  {t(`quote.${item}`)}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="rounded-3xl bg-white p-7">
+            <h3 className="text-eyebrow font-semibold uppercase text-muted">
+              {t("contactPage.info.hoursTitle")}
+            </h3>
+            <dl className="mt-5 space-y-3 text-[15px]">
+              {[
+                ["contactPage.info.weekdays", "8:00 AM – 8:00 PM"],
+                ["contactPage.info.saturday", "9:00 AM – 5:00 PM"],
+                ["contactPage.info.sunday", "9:00 AM – 5:00 PM"],
+              ].map(([key, hours]) => (
+                <div key={key} className="flex justify-between">
+                  <dt className="text-muted">{t(key)}</dt>
+                  <dd className="font-medium text-ink">{hours}</dd>
+                </div>
+              ))}
+            </dl>
+            <p className="mt-6 text-sm leading-relaxed text-muted">
+              {t("contactPage.info.urgent")}
+            </p>
           </div>
         </div>
-        <GoToTop />
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

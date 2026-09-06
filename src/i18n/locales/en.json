@@ -1,19 +1,6 @@
 {
   "home": {
-    "about": "About Us",
-    "aboutTitle": "From Pickup To Delivery, We Move Your Packages Securely",
-    "aboutDesc": "Whether you are sending documents across town or large shipments to clients, we tailor our service to fit your schedule and budget.",
-    "secureDelivery": "Secure Delivery",
-    "fastService": "Fast Service",
-
-    "whyChoose": "Why Choose Us",
-    "whyTitle": "Trusted By Hundreds Of Clients",
-    "whyDesc": "Our fleet includes bikes, cars, and vans to ensure fast, efficient delivery no matter the size of your shipment.",
-    "reliableTeam": "Reliable Team",
-    "guaranteedSafety": "Guaranteed Safety",
-
-    "testimonialsTitle": "Customer Testimonials",
-    "testimonialsDesc": "What our clients say about working with Start Door To Door."
+    "testimonialsTitle": "Customer Testimonials"
   },
   "nav": {
     "home": "Home",
@@ -22,19 +9,18 @@
     "services": "Services",
     "gallery": "Gallery",
     "contact": "Contact",
-    "language": "Language"
+    "language": "Language",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   },
   "footer": {
-    "overviewTitle": "Company Overview",
     "overviewText": "With a commitment to excellence and customer satisfaction, we strive to deliver premium quality and innovative solutions tailored to meet your needs.",
     "contactTitle": "Contact",
-    "headOffice": "Head Office: Start Door To Door, 100 Liberty Street, NY",
-    "phone": "999 673 984",
-    "email": "support@yourdomain.com",
     "servicesTitle": "Services",
     "service1": "Scheduled & Time Window Deliveries",
     "service2": "Large and Heavy Item Delivery",
-    "service3": "Medical and Sensitive Item Courier"
+    "service3": "Medical and Sensitive Item Courier",
+    "rights": "All rights reserved."
   },
   "testimonials": {
     "t1": {
@@ -53,27 +39,57 @@
   "services": {
     "s1": {
       "title": "Same Day Delivery",
-      "description": "Pickup and deliver within hours across NYC with real-time tracking and insured shipments."
+      "description": "Pickup and deliver within hours across NYC with real-time tracking and insured shipments.",
+      "features": {
+        "f1": "Pickup within hours",
+        "f2": "Live tracking end to end",
+        "f3": "Insured shipments"
+      }
     },
     "s2": {
       "title": "Scheduled & Time Window Deliveries",
-      "description": "Flexible pickup times and precise delivery windows for your business calendar."
+      "description": "Flexible pickup times and precise delivery windows for your business calendar.",
+      "features": {
+        "f1": "Choose your pickup window",
+        "f2": "Precise delivery slots",
+        "f3": "Recurring bookings"
+      }
     },
     "s3": {
       "title": "Large and Heavy Item Delivery",
-      "description": "Furniture, appliances, bulky shipments with inside delivery and setup options."
+      "description": "Furniture, appliances, bulky shipments with inside delivery and setup options.",
+      "features": {
+        "f1": "Furniture and appliances",
+        "f2": "Inside delivery",
+        "f3": "Assembly and setup options"
+      }
     },
     "s4": {
       "title": "Medical and Sensitive Item Courier",
-      "description": "Secure handling for medical samples, legal documents, with chain of custody."
+      "description": "Secure handling for medical samples, legal documents, with chain of custody.",
+      "features": {
+        "f1": "Chain of custody",
+        "f2": "Secure, monitored handling",
+        "f3": "Medical and legal documents"
+      }
     },
     "s5": {
       "title": "E-Commerce & Retail Fulfillment",
-      "description": "Streamlined order pickups, last mile delivery, easy returns for retail."
+      "description": "Streamlined order pickups, last mile delivery, easy returns for retail.",
+      "features": {
+        "f1": "Scheduled order pickups",
+        "f2": "Last-mile delivery",
+        "f3": "Easy returns handling"
+      }
     },
     "s6": {
       "title": "White-Glove Delivery & Installation",
-      "description": "Premium inside delivery, unboxing, setup, and packaging removal."
+      "description": "Premium inside delivery, unboxing, setup, and packaging removal.",
+      "features": {
+        "f1": "Inside delivery",
+        "f2": "Unboxing and setup",
+        "f3": "Packaging taken away"
+      }
     }
   },
   "servicesPage": {
@@ -81,10 +97,6 @@
     "description": "We offer a full spectrum of courier solutions designed for businesses and individuals. Whether you need urgent same day service or reliable scheduled deliveries, Start Door To Door provides secure handling, live tracking, and competitive pricing."
   },
   "hero": {
-    "home": {
-      "title": "Fast, NYC Courier Service",
-      "subtitle": "Send documents or large shipments, enjoy tailored service, schedule and budget. Vehicles: bikes, cars, vans."
-    },
     "about": {
       "title": "About Us",
       "subtitle": "Founded in the heart of New York, Start Door To Door is a customer focused courier company dedicated to reliability and speed."
@@ -111,29 +123,57 @@
     "visionText": "Founded in the heart of New York, Start Door To Door is a customer focused courier company dedicated to reliability and speed. We connect businesses and individuals with a seamless door to door delivery experience, powered by advanced routing, safety protocols, and real-time visibility.",
     "teamTitle": "Professional Team",
     "teamText": "We believe in transparency, fair pricing, and unmatched service. Our local team knows NYC streets and delivers with a mission to exceed expectations on every delivery.",
-    "featuresBtn": "Our Features"
+    "featuresBtn": "Our Features",
+    "teamHeadline": "Local knowledge, handled by people.",
+    "principlesTitle": "How we work",
+    "p1Title": "Say what's real",
+    "p1Copy": "If a window is tight or a route is busy, you hear it before you book, not after the parcel is late.",
+    "p2Title": "One point of contact",
+    "p2Copy": "You reach a person who can see the job and make a decision, not a queue that reads from a script.",
+    "p3Title": "Careful by default",
+    "p3Copy": "Fragile handling, correct vehicle, and proof of delivery on every job — not an upsell."
   },
   "tracking": {
     "title": "Track Your Package Easily",
     "subtitle": "Enter your tracking ID below for instant updates.",
     "tip": "Tip: Double-check your tracking ID!",
     "trouble": "Having trouble?",
-    "faq": "See FAQ",
     "placeholder": "Enter tracking number (e.g., SW123456789)",
     "trackBtn": "Track Package",
-    "show": "Show Updates",
-    "hide": "Hide Updates",
-    "updatesTitle": "Tracking Updates",
-    "alert": "Please enter a tracking ID",
+    "searching": "Searching…",
+    "now": "Now",
+    "noEta": "Not available yet",
+    "supportCta": "Contact support",
+    "fields": {
+      "id": "Tracking number",
+      "origin": "Origin",
+      "destination": "Destination",
+      "eta": "Estimated arrival"
+    },
     "status": {
-      "picked": "Parcel Picked Up",
-      "sorting": "Arrived at Sorting Center",
-      "out": "Out for Delivery"
+      "PICKED_UP": "Parcel picked up",
+      "AT_SORTING": "Arrived at sorting centre",
+      "IN_TRANSIT": "In transit",
+      "OUT_FOR_DELIVERY": "Out for delivery",
+      "DELIVERED": "Delivered",
+      "EXCEPTION": "Needs attention"
+    },
+    "errors": {
+      "INVALID_FORMAT": {
+        "title": "That does not look like a tracking number",
+        "body": "Tracking numbers look like DTD-123456789. Check for typos and try again."
+      },
+      "NOT_FOUND": {
+        "title": "No shipment found",
+        "body": "We could not find that tracking number. It can take a little while to appear after pickup."
+      },
+      "UNAVAILABLE": {
+        "title": "Tracking is unavailable",
+        "body": "We could not reach the tracking service. Please try again shortly."
+      }
     }
   },
   "contactPage": {
-    "title": "Contact Us",
-    "subtitle": "Get in touch with our customer service team",
     "form": {
       "title": "Send us a Message",
       "firstName": "First Name",
@@ -165,6 +205,284 @@
       "saturday": "Saturday",
       "sunday": "Sunday",
       "urgent": "For urgent matters outside business hours, please use our online tracking system or email support."
+    }
+  },
+  "common": {
+    "backToTop": "Back to top"
+  },
+  "heroHome": {
+    "eyebrow": "Door to door courier",
+    "titleLead": "Moving what",
+    "titleAccent": "matters.",
+    "subtitle": "From your doorstep to theirs — trusted, tracked, and moving with purpose.",
+    "scrollCue": "Scroll"
+  },
+  "cta": {
+    "track": "Track your package",
+    "quote": "Get a quote",
+    "title": "Ready to move it?",
+    "subtitle": "Tell us what you are sending and where it needs to be. We take it from there.",
+    "send": "Send a package",
+    "talk": "Talk to us"
+  },
+  "trust": {
+    "fleetValue": "Bikes · Cars · Vans",
+    "fleetLabel": "One fleet for every parcel size",
+    "servicesValue": "6",
+    "servicesLabel": "Courier services on offer",
+    "areaValue": "New York City",
+    "areaLabel": "Where we operate today",
+    "languagesValue": "3",
+    "languagesLabel": "Languages we support"
+  },
+  "story": {
+    "eyebrow": "Every package has a destination",
+    "title": "Follow a parcel from pickup to delivery",
+    "package": {
+      "label": "Package",
+      "title": "It starts with a box.",
+      "copy": "Documents, parcels, or something big and awkward — the journey begins the moment it leaves your hands."
+    },
+    "pickup": {
+      "label": "Picked up",
+      "title": "We come to your door.",
+      "copy": "A courier collects at the time you choose and scans the parcel into the network."
+    },
+    "sorting": {
+      "label": "Sorting",
+      "title": "Routed, not shuffled.",
+      "copy": "At the hub your parcel is scanned, sorted, and matched to the fastest way out."
+    },
+    "transit": {
+      "label": "In transit",
+      "title": "On the road.",
+      "copy": "Bike, car, or van — the parcel travels on the vehicle that suits its size and deadline."
+    },
+    "outForDelivery": {
+      "label": "Out for delivery",
+      "title": "The last mile.",
+      "copy": "Loaded for the final run, with the status live on your tracking page."
+    },
+    "delivered": {
+      "label": "Delivered",
+      "title": "Handed over.",
+      "copy": "Signed for at the door and closed on your timeline. Every package has a destination."
+    }
+  },
+  "trackingSection": {
+    "eyebrow": "Tracking",
+    "title": "Where is my package?",
+    "subtitle": "Enter your tracking number for the latest scan, the current milestone, and the estimated arrival."
+  },
+  "servicesSection": {
+    "eyebrow": "Services",
+    "title": "Two ways we move things",
+    "all": "All services",
+    "featuresLabel": "What's included",
+    "tagConsumer": "For people",
+    "tagBusiness": "For business",
+    "cardCta": "Get a quote"
+  },
+  "network": {
+    "eyebrow": "Coverage",
+    "title": "A network built one route at a time",
+    "body": "We operate across {{area}}. Rather than claim a map we cannot serve, we take on the routes we can run properly and add more as the fleet grows.",
+    "note": "Illustrative network graphic — ask us about a specific route.",
+    "imageAlt": "Abstract diagram of delivery routes"
+  },
+  "why": {
+    "eyebrow": "Why Door to Door",
+    "title": "Four things we refuse to compromise on",
+    "fast": {
+      "title": "Fast",
+      "copy": "Same-day and time-window options, with routes planned around your deadline."
+    },
+    "trackable": {
+      "title": "Trackable",
+      "copy": "Every scan lands on your tracking page, from pickup to the final handover."
+    },
+    "secure": {
+      "title": "Secure",
+      "copy": "Careful handling and chain-of-custody options for documents, medical, and fragile items."
+    },
+    "human": {
+      "title": "Human support",
+      "copy": "A real person answers when a delivery needs a decision."
+    }
+  },
+  "notFound": {
+    "title": "This page moved on.",
+    "body": "The page you are looking for is not here. Let us get you back on route.",
+    "home": "Back home"
+  },
+  "howItWorks": {
+    "eyebrow": "How it works",
+    "title": "Four steps, start to signature",
+    "s1": {
+      "title": "Book the job",
+      "copy": "Tell us the pickup address, the destination, and when it needs to move. Online, by phone, or over email."
+    },
+    "s2": {
+      "title": "We collect it",
+      "copy": "A courier arrives in the agreed window, checks the packaging, and scans the parcel into the network."
+    },
+    "s3": {
+      "title": "It moves",
+      "copy": "Every handover is scanned, so the parcel's location and status stay visible on your tracking page."
+    },
+    "s4": {
+      "title": "Proof of delivery",
+      "copy": "We capture a signature or a delivery note with the time and place, and close the job on your timeline."
+    }
+  },
+  "coverage": {
+    "areasLabel": "Boroughs we cover",
+    "b1": "Manhattan",
+    "b2": "Brooklyn",
+    "b3": "Queens",
+    "b4": "The Bronx",
+    "b5": "Staten Island",
+    "beyond": "Going outside these areas? Ask us — longer runs are quoted case by case."
+  },
+  "sending": {
+    "eyebrow": "Before you send",
+    "title": "What we carry, and what we can't",
+    "canTitle": "We're set up for",
+    "can1": "Documents, contracts, and legal files",
+    "can2": "Retail parcels and e-commerce orders",
+    "can3": "Fragile items, packed and marked",
+    "can4": "Furniture and bulky household items",
+    "can5": "Medical samples and sensitive deliveries",
+    "cantTitle": "We can't carry",
+    "cant1": "Explosives, fireworks, and ammunition",
+    "cant2": "Flammable liquids and gas cylinders",
+    "cant3": "Firearms, weapons, and replicas",
+    "cant4": "Illegal items and unlicensed goods",
+    "cant5": "Cash, and perishables that can't survive the trip",
+    "note": "Restrictions on dangerous goods come from federal transport rules, not just from us. If you're unsure about an item, ask before you book.",
+    "packTitle": "Packing that survives the trip",
+    "pack1": "Use a rigid box with room for cushioning on every side.",
+    "pack2": "Wrap fragile contents individually and fill the gaps so nothing shifts.",
+    "pack3": "Seal every seam with tape, then mark the box FRAGILE or THIS WAY UP.",
+    "pack4": "Put the full delivery address and a phone number on the outside."
+  },
+  "faq": {
+    "eyebrow": "Questions",
+    "title": "Answers before you ask",
+    "q1": {
+      "q": "How fast is same-day delivery?",
+      "a": "Same-day jobs move within hours of pickup rather than on a fixed timetable — the exact window depends on distance, traffic, and when the parcel is ready. We confirm a realistic window when you book, and the tracking page shows the current status."
+    },
+    "q2": {
+      "q": "How do I track my parcel?",
+      "a": "Every parcel is scanned at each handover. Enter your tracking number on the tracking page to see the latest scan, the current milestone, and the estimated arrival when one is available."
+    },
+    "q3": {
+      "q": "What happens if nobody is there to receive it?",
+      "a": "The courier contacts the number on the job. Depending on what you've asked for, we can leave it with a neighbour, return it to the depot for a second attempt, or hold it for collection. Nothing is left unattended without your instruction."
+    },
+    "q4": {
+      "q": "Do you provide proof of delivery?",
+      "a": "Yes. Deliveries are closed with a signature or a delivery note recording who took the parcel, and the date and time. It appears on your tracking timeline."
+    },
+    "q5": {
+      "q": "How is the price worked out?",
+      "a": "Price depends on distance, parcel size and weight, how quickly it has to move, and whether it needs two people or inside delivery. Send us the details and you get a quote before anything is booked."
+    },
+    "q6": {
+      "q": "Can you handle regular, repeating deliveries?",
+      "a": "Yes. Recurring pickups and scheduled routes are set up for business accounts — same driver window, same route, on the days you choose."
+    }
+  },
+  "handling": {
+    "eyebrow": "How we handle your parcel",
+    "title": "The care rules we work to",
+    "h1": {
+      "title": "Scanned at every handover",
+      "copy": "Pickup, sorting, transit, and delivery each produce a scan, so there is a record of where the parcel has been."
+    },
+    "h2": {
+      "title": "Chain of custody on request",
+      "copy": "For medical, legal, and sensitive items we can record who held the parcel at each step and hand it over person to person."
+    },
+    "h3": {
+      "title": "The right vehicle for the load",
+      "copy": "Bikes for documents through the traffic, cars for parcels, vans for furniture and bulk. The load decides, not the schedule."
+    },
+    "h4": {
+      "title": "Closed with proof",
+      "copy": "A signature or delivery note with a time stamp closes the job, and stays on the shipment timeline."
+    }
+  },
+  "trackingHelp": {
+    "statusTitle": "What each status means",
+    "s1": "Picked up — the parcel is with a courier and in the network.",
+    "s2": "At sorting — it has been scanned at a hub and routed onward.",
+    "s3": "In transit — it is moving between hubs or towards the delivery area.",
+    "s4": "Out for delivery — it is loaded for the final run today.",
+    "s5": "Delivered — handed over, with a signature or delivery note.",
+    "s6": "Needs attention — something is blocking delivery; contact support and we'll sort it.",
+    "helpTitle": "No updates yet?",
+    "help1": "A new number can take a little while to appear — scans start at the first pickup.",
+    "help2": "Check the number against the confirmation you were sent; letters and digits are easy to mix up.",
+    "help3": "Still nothing? Send us the number and the pickup address and we'll trace it."
+  },
+  "quote": {
+    "title": "What to include in a quote request",
+    "i1": "Pickup and delivery addresses, including floor or unit",
+    "i2": "What is being sent, roughly how big and how heavy",
+    "i3": "When it needs to be collected and when it must arrive",
+    "i4": "Anything special: fragile, needs two people, inside delivery, signature required"
+  },
+  "galleryPage": {
+    "eyebrow": "Inside the operation",
+    "title": "A day on the route",
+    "intro": "Nine moments from the work itself — packing, pickup, the hub, the road, and the handover at the door.",
+    "filters": {
+      "all": "Everything",
+      "pickup": "Pickup",
+      "hub": "At the hub",
+      "transit": "On the road",
+      "delivery": "Delivery"
+    },
+    "close": "Close",
+    "prev": "Previous image",
+    "next": "Next image",
+    "i1": {
+      "title": "Marked before it moves",
+      "caption": "Fragile contents get written on the box, not just noted on the docket. The handler who picks it up can see it."
+    },
+    "i2": {
+      "title": "Bike courier, city centre",
+      "caption": "Documents and small parcels move faster on two wheels when traffic is standing still."
+    },
+    "i3": {
+      "title": "Loading at the kerb",
+      "caption": "Boxes stacked heaviest first, then walked to the van — no dragging, no dropping."
+    },
+    "i4": {
+      "title": "Manifest before departure",
+      "caption": "Every parcel on board is checked against the run sheet before the doors close."
+    },
+    "i5": {
+      "title": "Pallet handling",
+      "caption": "Bulk and heavy freight moves on a forklift at the hub, away from the parcel line."
+    },
+    "i6": {
+      "title": "Scanned into the network",
+      "caption": "Each scan is what puts a new line on your tracking page — pickup, hub, transit, delivery."
+    },
+    "i7": {
+      "title": "Route sheet, last check",
+      "caption": "Drop order set, addresses confirmed, and the tight windows flagged before the run starts."
+    },
+    "i8": {
+      "title": "Residential drop",
+      "caption": "Van at the kerb, parcels carried to the door — the part of the job the customer actually sees."
+    },
+    "i9": {
+      "title": "Large item, hand carried",
+      "caption": "Bulky items go from van to doorstep by hand, and inside if that is what was booked."
     }
   }
 }

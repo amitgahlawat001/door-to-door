@@ -1,40 +1,30 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import Button from "../components/ui/Button";
 
 const PageNotFound: React.FC = () => {
-  const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 px-4">
-      <div className="text-center">
-        <h1 className="text-9xl font-extrabold text-gray-300 animate-pulse">
+    <section className="grain relative flex min-h-screen items-center bg-deep">
+      <div className="shell py-32 text-center">
+        <p className="font-display text-[clamp(5rem,18vw,12rem)] font-semibold leading-none text-paper/10">
           404
-        </h1>
-        <h2 className="text-3xl sm:text-4xl font-bold mt-6 text-gray-800">
-          Oops! Page Not Found
-        </h2>
-        <p className="mt-4 text-gray-600">
-          The page you are looking for might have been removed, had its name
-          changed, or is temporarily unavailable.
         </p>
-
-        <button
-          onClick={() => navigate("/")}
-          className="mt-8 px-6 py-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 transition transform hover:scale-105"
-        >
-          Go Back Home
-        </button>
+        <h2 className="-mt-6 font-display text-headline font-semibold text-paper">
+          {t("notFound.title")}
+        </h2>
+        <p className="mx-auto mt-5 max-w-md text-lg text-paper/60">
+          {t("notFound.body")}
+        </p>
+        <div className="mt-10 flex flex-wrap justify-center gap-4">
+          <Button to="/">{t("notFound.home")}</Button>
+          <Button to="/trackshipment" variant="ghost" className="text-paper">
+            {t("cta.track")}
+          </Button>
+        </div>
       </div>
-
-      {/* Optional illustration */}
-      {/* <div className="mt-10">
-        <img
-          src="https://undraw.co/api/illustrations/404_page.svg"
-          alt="Page Not Found"
-          className="w-80 sm:w-96 mx-auto"
-        />
-      </div> */}
-    </div>
+    </section>
   );
 };
 
