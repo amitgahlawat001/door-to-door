@@ -188,6 +188,9 @@ const ScrollStory: React.FC = () => {
               <p className="eyebrow text-accent">{t("story.eyebrow")}</p>
 
               <div className="relative mt-4 min-h-[170px] sm:min-h-[190px] lg:mt-5">
+                {/* No `mode` here on purpose: the beats are stacked with
+                    `absolute inset-0` and cross-fade. `mode="wait"` would hold
+                    the panel empty while a scrub races past several beats. */}
                 <AnimatePresence initial={false}>
                   <motion.div
                     key={scene.key}

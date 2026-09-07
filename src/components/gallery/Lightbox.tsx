@@ -1,7 +1,8 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { GalleryShot } from "./galleryData";
+import { useDialog } from "../../hooks/useDialog";
 
 interface Props {
   shots: GalleryShot[];
@@ -22,22 +23,18 @@ const Lightbox: React.FC<Props> = ({ shots, index, onClose, onChange }) => {
     [index, shots.length, onChange]
   );
 
-  useEffect(() => {
-    if (!open) return;
+  // Scroll lock, Escape, focus trap and focus return.
+  const panel = useDialog<HTMLDivElement>(open, onClose);
 
+  React.useEffect(() => {
+    if (!open) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
       if (e.key === "ArrowRight") step(1);
       if (e.key === "ArrowLeft") step(-1);
     };
-
     document.addEventListener("keydown", onKey);
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = "";
-    };
-  }, [open, onClose, step]);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open, step]);
 
   const shot = index === null ? null : shots[index];
 
@@ -45,6 +42,8 @@ const Lightbox: React.FC<Props> = ({ shots, index, onClose, onChange }) => {
     <AnimatePresence>
       {shot && (
         <motion.div
+          key="lightbox"
+          ref={panel}
           role="dialog"
           aria-modal="true"
           aria-label={t(`galleryPage.${shot.key}.title`)}
@@ -52,7 +51,7 @@ const Lightbox: React.FC<Props> = ({ shots, index, onClose, onChange }) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 z-[60] flex flex-col items-center justify-center bg-deep/95 p-4 backdrop-blur-sm sm:p-8"
+          className="fixed inset-0 z-[60] flex flex-col items-center justify-center bg-deep/95 p-4 sm:p-8"
         >
           <button
             type="button"

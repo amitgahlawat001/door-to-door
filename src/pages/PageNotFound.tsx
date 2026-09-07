@@ -6,8 +6,8 @@ const PageNotFound: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="grain relative flex min-h-screen items-center bg-deep">
-      <div className="shell py-32 text-center">
+    <section className="grain relative flex min-h-[78vh] items-center bg-deep">
+      <div className="shell py-28 pt-36 text-center">
         <p className="font-display text-[clamp(5rem,18vw,12rem)] font-semibold leading-none text-paper/10">
           404
         </p>

@@ -26,4 +26,12 @@ i18n
     },
   });
 
+// Screen readers need the document language to follow the UI language,
+// otherwise Hindi and Gujarati are read with English pronunciation rules.
+const syncLang = (lng: string) => {
+  document.documentElement.lang = lng;
+};
+syncLang(i18n.resolvedLanguage ?? "en");
+i18n.on("languageChanged", syncLang);
+
 export default i18n;

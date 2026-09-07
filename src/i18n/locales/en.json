@@ -191,7 +191,9 @@
       "message": "Message",
       "placeholder": "Please describe your inquiry in detail...",
       "submit": "Send Message",
-      "success": "Thank you! We will contact you soon."
+      "success": "Thank you! We will contact you soon.",
+      "sending": "Sending…",
+      "another": "Send another message"
     },
     "info": {
       "title": "Get in Touch",
@@ -208,7 +210,8 @@
     }
   },
   "common": {
-    "backToTop": "Back to top"
+    "backToTop": "Back to top",
+    "skipToContent": "Skip to content"
   },
   "heroHome": {
     "eyebrow": "Door to door courier",

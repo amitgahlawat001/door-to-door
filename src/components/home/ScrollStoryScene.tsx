@@ -25,7 +25,7 @@ const ScrollStoryScene: React.FC<Props> = ({ scene, index }) => {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-deep via-deep/45 to-deep/10" />
 
-      <div className="absolute left-6 top-6 flex items-center gap-3 rounded-full bg-paper/95 px-4 py-2 md:left-8 md:top-8">
+      <div className="glass glass-strong glass-edge absolute left-6 top-6 flex items-center gap-3 rounded-full px-4 py-2 md:left-8 md:top-8">
         <img src={scene.icon} alt="" className="h-5 w-5" />
         <span className="text-eyebrow font-semibold uppercase text-ink">
           {t(`story.${scene.key}.label`)}

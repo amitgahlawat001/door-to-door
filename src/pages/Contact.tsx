@@ -18,6 +18,7 @@ const labelCls = "mb-2 block text-sm font-medium text-ink";
 const Contact: React.FC = () => {
   const { t } = useTranslation();
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
   const [values, setValues] = useState({
     firstName: "",
     lastName: "",
@@ -31,10 +32,24 @@ const Contact: React.FC = () => {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => setValues((v) => ({ ...v, [key]: e.target.value }));
 
+  const empty = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  };
+
   // TODO(owner): POST `values` to the real inbox/CRM endpoint. The form is
-  // client-only today, exactly as it was before the redesign.
-  const submit = (e: React.FormEvent) => {
+  // client-only today, exactly as it was before the redesign — the pending
+  // state below stands in for that request so the button has something to say.
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (sending) return;
+    setSending(true);
+    await new Promise((r) => setTimeout(r, 600));
+    setSending(false);
     setSubmitted(true);
   };
 
@@ -51,9 +66,34 @@ const Contact: React.FC = () => {
               role="status"
               className="mt-8 rounded-2xl bg-brand/10 p-8 text-center"
             >
-              <p className="font-display text-xl font-semibold text-ink">
+              <span
+                aria-hidden="true"
+                className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-brand text-paper"
+              >
+                <svg viewBox="0 0 20 20" className="h-5 w-5">
+                  <path
+                    d="m4 10.5 4 4 8-9"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
+              <p className="mt-5 font-display text-xl font-semibold text-ink">
                 {t("contactPage.form.success")}
               </p>
+              <button
+                type="button"
+                onClick={() => {
+                  setValues(empty);
+                  setSubmitted(false);
+                }}
+                className="mt-5 text-sm font-semibold text-brand underline underline-offset-4"
+              >
+                {t("contactPage.form.another")}
+              </button>
             </div>
           ) : (
             <form onSubmit={submit} className="mt-8 space-y-5">
@@ -147,8 +187,8 @@ const Contact: React.FC = () => {
                 />
               </div>
 
-              <Button type="submit" className="w-full">
-                {t("contactPage.form.submit")}
+              <Button type="submit" loading={sending} className="w-full">
+                {t(sending ? "contactPage.form.sending" : "contactPage.form.submit")}
               </Button>
             </form>
           )}
